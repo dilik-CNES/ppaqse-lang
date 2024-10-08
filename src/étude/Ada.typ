@@ -93,8 +93,8 @@
       passer par #spark qui permet de garantir statiquement des propriétés sur
       les calculs effectués.
 
-      Enfin, il existe aussi des implémentations #Ada pour #mpfr et #gmp pour
-      calculs dynamiques.
+      Enfin, il existe aussi des implémentations #Ada pour #mpfr et #gmp afin
+      de réaliser des calculs dynamiques.
   ],
 
   assurances: [
