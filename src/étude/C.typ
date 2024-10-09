@@ -352,7 +352,7 @@ par exemple).
 
   tests: [
 Nous avons comparés plusieurs outils de tests pour le langage C. Parmi ceux-ci,
-se dégagent #cantata, #parasoft, #TPT et #vectorcast qui offent un support de
+se dégagent #cantata, #parasoft, #TPT et #vectorcast qui offrent un support de
 test étendu pour le C. Ils fournissent également :
 - de la génération de test à des degrés divers ;
 - une bonne gestion des tests à travers diverses configurations ;
@@ -379,8 +379,8 @@ tiers qui peuvent être utiles dans les cas d'intégration.
   caption: [Comparaison des outils de tests pour le langage C],
 ) <c-test>
 
-  La #ref(<c-test>) utilise la nomenclature indiquée dans l'annexe
-  #ref(<A-tests>).
+  La #ref(<c-test>) utilise la nomenclature indiquée dans la
+  #ref(<A-tests>)
   ],
 
   compilation: [
@@ -417,12 +417,12 @@ distinguer dans le contexte de l'embarqué critique.
 
 Notons que le compilateur #aocc est basé sur #clang/#llvm mais y ajoute
 des optimisations spécifiques aux processeurs AMD. #clang est la partie frontale
-de #llvm et les deux forment un compilateur modulaire inité par #apple pour
+de #llvm et les deux forment un compilateur modulaire initié par #apple pour
 remplacer #gcc dans les années 2000. Aujourd'hui, ces deux compilateurs offrent
 des performances équivalentes.
 
 #gcc est le compilateur de référence pour le langage C depuis les années 1990.
-Il est très complet et supporte un grand nombre d'architecture dont seulement
+Il est très complet et supporte un grand nombre d'architectures dont seulement
 une petite partie est indiquée dans le tableau.
 
 #icx est le compilateur d'#intel spécifique à aux processeurs et FPGA de la
@@ -449,7 +449,7 @@ propre à une utilisation dans le domaine critique.
   debug: [
     Comme pour les compilateurs, il existe une multitude de débugueurs en fonction
 des systèmes d'exploitation et des architectures. Pour simplifier la lecture
-de ce document, nous le listons ici que les principaux débugueurs connus.
+de ce document, nous ne listons ici que les principaux débugueurs connus.
 
 #figure(
   table(
@@ -478,7 +478,7 @@ qu'un outil en ligne de commande mais des interfaces graphiques existent pour
 le compléter, le plus connu étant probablement #ddd.
 
 #lldb est le déboggeur associé à #clang/#llvm comme #gdb l'est à #gcc. Etant
-plus jeune, il supporte moins d'architecture mais plus de système
+plus jeune, il supporte moins d'architectures mais plus de systèmes
 d'exploitation (notamment MacOS et iOS).
 
 
@@ -671,7 +671,7 @@ dans le cadre d'une définition de #dsl ou de protocole pour l'embarqué afin
 de faciliter la création d'outils spécifiques.
 
 Autrement, la différence entre les _parsers_ de la liste réside essentiellement
-dans l'algorithme utilisé (LL, LR, LALR, ...) dans les
+dans l'algorithme utilisé (LL, LR, LALR, ...) et dans les
 fonctionnalités supplémentaires qu'ils offrent.
 
   ],
@@ -820,8 +820,8 @@ embarqués.
 
   interfacage: [
     Le C étant devenu _de facto_ un langage de référence utilisé sur beaucoup de
-    systèmes et avec un nombre important de bibliothèques, la pluspart des
-    langages moderne proposent une FFI#footnote[_Foreign Function Interface_,
+    systèmes et avec un nombre important de bibliothèques, la plupart des
+    langages modernes proposent une FFI#footnote[_Foreign Function Interface_,
     ou interface de programmation externe.] pour le C. Cela permet d'exporter du
     C dans ces langages mais également au C de les utiliser.
   ],

@@ -37,6 +37,9 @@ $(BUILD_DIR)/%.pdf: src/%.typ $$(call deps,src/%.typ) $$(dir src/%)/bibliography
 # force moving file for typst seems to always try building locally oO
 	mv -f src/$*.pdf $@
 
+clean:
+	rm -rf _build
+
 .PRECIOUS: %/.
 %/.:
 	mkdir -p $@
