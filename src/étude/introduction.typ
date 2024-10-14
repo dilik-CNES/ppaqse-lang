@@ -21,10 +21,30 @@
 
 == Organisation du document
 
-Le document présente tout d'abord la méthodologie utilisée pour l'étude en
-détaillant les points abordés pour chaque langage. Ensuite, chaque langage
-est étudié individuellement en respectant le plan défini.
-
+Le document présente les langages C, C++, #Ada, #Scade, #OCaml et #Rust
+d'un point de vue de la sûreté logicielle embarquée selon un plan organisé en
+trois axes:
+1. une description du langage décrivant
+  + son paradigme;
+  + ses mécanismes de protection;
+  + ses compilateurs;
+  + son adhérence au système;
+  + ses gestionnaires de paquets;
+  + sa communauté.
+2. l'outillage présent dans l'écosystème du langage :
+  + les débugueurs;
+  + les outils de tests;
+  + les outils de _parsing_;
+  + les capacités de méta-programmation;
+  + les possibilités de dérivation.
+3. les aspects de sûreté logicielle :
+  + les outils d'analyse statique disponibles;
+  + les moyens de formalisation;
+  + le calcul statique du WCET;
+  + le calcul statique de la taille de pile maximale;
+  + les outils de qualité numérique;
+  + l'assurance générale de la qualité du code;
+  + l'utilisation dans le domaine critique.
 
 == Note méthodologique
 

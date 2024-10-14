@@ -28,7 +28,7 @@
     #Scade est un langage _data flow_ #paradigme[déclaratif] et
     #paradigme[synchrone].
 
-    Contrairement à la plus part des langages généralistes dont la brique
+    Contrairement à la plupart des langages généralistes dont la brique
     élémentaire de donnée est l'entier, #Scade manipule des _séquences_ (ou
     signaux)
     potentiellement infinies indexées par un temps discret. Ces séquences sont
@@ -131,7 +131,9 @@
       possible, il faut introduire un délai (via `->`) ;
     - le programme peut être exécuté avec une quantité de mémoire bornée et
       connue,
-    - le programme est déterministe au sens où sa sortie ne dépend pas d'une
+    - le programme est déterministe au sens où sa sortie ne dépend pas d'un
+      ordonnancement des tâches du système hôte (_i.e._ il n'y a pas
+      de _threads_).
   ],
 
   interfacage: [

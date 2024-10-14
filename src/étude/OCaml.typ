@@ -44,19 +44,6 @@
     travers un système de typage très puissant et un ramasse-miettes à l'état
     de l'art.
 
-    Le langage n'expose à l'utilisateur qu'une notion de _valeur_ qui
-    n'autorise pas la manipulation manuelle des pointeurs. Ceux-ci sont gérés
-    automatiquement à la compilation et par le ramasse miettes. Cela permet
-    de se prémunir contre toutes les erreurs de gestion de la mémoire.
-
-    Les valeurs sont alignées systématiquement sur la taille d'un mot mémoire
-    et les valeurs numériques sont encodées sur 31 ou 63 bits suivant les
-    architectures (respectivement 32 ou 64 bits). Le bit manquant sert au
-    ramasse miettes. Cette représentation uniforme diminue les occurences
-    de dépassement de capacité puisqu'on ne peut pas manipuler des entiers
-    plus petits qui seraient mal dimensionnés mais l'erreur est toujours
-    possible.
-
     Il y a eu des initiatives pour ajouter plus d'analyse statique, notamment
     sur les exceptions, mais aucune n'a donné d'outil mature indépendant ou
     intégré au
@@ -131,6 +118,19 @@
     famille des langages ML et a été reprit dans les langages plus récents
     (Swift, #Rust, ...) pour les mêmes raisons.
 
+    Le langage n'expose à l'utilisateur qu'une notion de _valeur_ qui
+    n'autorise pas la manipulation manuelle des pointeurs. Ceux-ci sont gérés
+    automatiquement à la compilation et par le ramasse miettes. Cela permet
+    de se prémunir contre toutes les erreurs de gestion de la mémoire.
+
+    Les valeurs sont alignées systématiquement sur la taille d'un mot mémoire
+    et les valeurs numériques sont encodées sur 31 ou 63 bits suivant les
+    architectures (respectivement 32 ou 64 bits). Le bit manquant sert au
+    ramasse miettes. Cette représentation uniforme diminue les occurences
+    de dépassement de capacité puisqu'on ne peut pas manipuler des entiers
+    plus petits qui seraient mal dimensionnés mais l'erreur est toujours
+    possible.
+
     Le ramasse-miettes, quant à lui, permet de se prémunir contre les fuites
     mémoires et les erreurs de gestion de la mémoire. Il est particulièrement
     efficace pour les programmes #ocaml car il utilise un système a double
@@ -141,6 +141,12 @@
     les allocations dans le tas mineur sont très efficaces (cela revient à
     globalement incrémenter un compteur), celui-ci se comporte à peu près comme
     la pile et bénéficie des effets de cache.
+
+    Notons que le langage a fait l'objet d'études de
+    sécurité#cite(<lafosec>) qui sont des guides
+    de bonnes pratiques pour écrire du code sûr en #ocaml. Ces guides sont à
+    l'origine des guides orientés vers la sécurité mais ils sont valides pour
+    la sûreté.
   ],
   tests: [
 
@@ -159,7 +165,10 @@
     valeur pour les types de données utilisés, ce qui permet de faire du
     test automatisé par _fuzzing_. Par ailleurs, #qcheck est compatible
     avec #ounit pour éventuellement obtenir des rapports au format JUnit.
-    #crowbar utilise également le _fuzzing_ via l'outil `afl-fuzz`.
+
+    #crowbar utilise également le _fuzzing_ via l'outil `afl-fuzz` mais il
+    nécessite d'utiliser un compilateur #OCaml compilé avec le support de
+    l'intrumentation (les variantes `+afl` dans `opam`).
 
     #figure(
       table(
@@ -219,7 +228,17 @@
 
   debug: [
     #ocaml est fourni avec un debuggeur par défaut : `ocamldebug` qui se
-    comporte peu ou prou comme #gdb pour un programme #ocaml.
+    comporte peu ou prou comme #gdb pour un programme #ocaml mais seulement
+    avec le programme compilé en _bytecode_.
+
+    Techniquement, #gdb et les autres débugueurs pour le C peuvent être
+    utilisé sur les programmes #OCaml compilés en natif mais ce n'est pas
+    forcément pratique car il faut composer avec le nommage d'#OCaml
+    dans le code engendré qui suit le schéma
+    `caml<MODULE>.<FONCTION>_<NNN>` où `NNN` est un entier calculé au hasard
+    à la compilation. Par ailleurs, l'examen des valeurs #OCaml est également
+    pénible car les débugueurs classiques ne savent pas comment les interpréter
+    donc il y a là aussi une petite gymnastique à effectuer.
   ],
 
   metaprog: [
@@ -392,6 +411,10 @@
     L'utilisation de MirageOS, un unikernel écrit en #ocaml est pressenti comme
     étant une technologie utilisable dans le spatial mais aucune utilisation
     avérée n'a été recensée jusqu'à présent.
+
+    Toutefois, si le langage n'est pas utilisé directement, il est utilisé
+    au travers des outils développés pour la sûreté : KCG#cite(<ocaml-kcg>),
+    #astree et #compcert.
   ]
 
 

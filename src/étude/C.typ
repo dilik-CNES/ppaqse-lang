@@ -135,7 +135,7 @@
     ) <c-static>
 
     Toutes les erreurs indiquées dans la @c-static ne sont pas forcément des
-    erreurs àç _runtime_ mais cela permet de se faire une idée des possibilités
+    erreurs à _runtime_ mais cela permet de se faire une idée des possibilités
     de chaque outil.
 
   ],
@@ -279,7 +279,7 @@
     des outils d'analyse statique. #polyspace détecte essentiellement des
     erreurs à _runtime_ comme la division par 0, les dépassements de capacité et
     les débordements de buffer. #astree détecte également les erreurs de
-    runtime mais réaliste également un calcul d'intervalles permettant d'évaluer
+    runtime mais réalise également un calcul d'intervalles permettant d'évaluer
     les erreurs d'arrondis. #fluctuat est un outil académique qui est spécifiquement
     dédié à l'analyse numérique flottante par interprétation abstraite en utilisant
     un domaine basé sur l'arithmétique affine.
@@ -300,7 +300,19 @@
   ],
 
   formel: [
-    Les outils permettant de formaliser un programme C sont peu nombreux et
+    #let verifiedC = link("https://vst.cs.princeton.edu/veric/")[VerifiedC]
+
+    Le langage C, ou du moins un sous-ensemble, a été formalisé à travers le
+    projet #compcert et cette formalisation est utilisable via l'outil
+    #verifiedC#footnote[https://vst.cs.princeton.edu/veric/] pour prouver des
+    propriétés sur la version #coq du programme
+    donné à l'outil. C'est une démarche qui permet de formaliser le C sans y
+    toucher directement mais qui peut être compliquée à utiliser en pratique
+    car le #coq engendré peut radpiement être volumineux et, même si
+    #verifiedC nous aide un peu en fournissant des tactiques, cela reste réservé
+    à des spécialistes de la preuve formelle et de #coq en particulier.
+
+    Les autres outils permettant de formaliser un programme C
     fonctionnent tous sur le même principe d'annotations du code source avec
     une contractualisation utilisant une logique de séparation. Parmi ceux-ci,
     nous avons comparé #framac, #redefinedc et #vercors.
@@ -332,6 +344,7 @@
     en utilisant la logique de séparation mais également la logique de
     permission, ce qui permet d'exprimer des propriétés d'_ownership_. #viper
     utilise le solveur SMT #z3 pour décharger les preuves.
+
 
   ],
 
@@ -379,8 +392,7 @@ tiers qui peuvent être utiles dans les cas d'intégration.
   caption: [Comparaison des outils de tests pour le langage C],
 ) <c-test>
 
-  La #ref(<c-test>) utilise la nomenclature indiquée dans la
-  #ref(<A-tests>)
+  La #ref(<c-test>) utilise la nomenclature indiquée dans l'@A-tests[]
   ],
 
   compilation: [
@@ -739,7 +751,7 @@ est une priorité.
     par le système d'exploitation (`apt` pour Debian par exemple). Cependant,
     le besoin de créer des environnements isolés pour les projets a poussé à
     la création de gestionnaires de paquets spécifiques dans beaucoup de
-    langages (`cabal` pour Hashell, `pip` pour Python, ...). Des gestionnaires
+    langages (`cabal` pour Haskell, `pip` pour Python, ...). Des gestionnaires
     de paquets pour le C ont donc été également créés pour répondre à ce besoin.
 
     La plupart des gestionnaires de paquets proposent peu ou prou les mêmes

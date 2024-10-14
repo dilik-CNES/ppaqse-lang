@@ -197,3 +197,24 @@ ocaml-wcet:
   author:
     - Steven Varoumas
     - Tristan Crolard
+
+lafosec:
+  type: web
+  title: |
+    LaFoSec : Sécurité et langages fonctionnels
+  url: https://cyber.gouv.fr/publications/lafosec-securite-et-langages-fonctionnels
+
+ocaml-kcg:
+  type: report
+  title: |
+    Experience Report: Using Objective Caml to Develop Safety-Critical Embedded
+    Tools in a Certification Framework
+  author:
+    - Bruno Pagano
+    - Olivier Andrieu
+    - Thomas Moniot
+    - Benjamin Canou
+    - Emmanuel Chailloux
+    - Philippe Wang
+    - Pascal Manoury
+
