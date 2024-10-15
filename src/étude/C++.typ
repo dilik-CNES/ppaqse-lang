@@ -194,7 +194,7 @@ concepts et la sémantique complexe du langage font que tous
 ces mécanismes sont difficiles à bien maîtriser. Or,
 mal utilisés, ces mécanismes ont un effet inverse en fragilisant la fiabilité
 du code produit. Par ailleurs, même bien utilisés, la multiplication des
-abstractions pend les programmes C++ peu lisibles et posent souvent des
+abstractions prend les programmes C++ peu lisibles et posent souvent des
 problèmes de maintenabilité.
 
 En conséquence, les normes C++ en matière de logiciel critique
