@@ -32,7 +32,7 @@ all: $(PDFS)
 watch:
 	while inotifywait -e close_write "src/étude/OCamlPro_PPAQSE-COTS_rapport.typ" || true; do make; done
 
-$(BUILD_DIR)/%.pdf: src/%.typ $$(call deps,src/%.typ) $$(dir src/%)/bibliography.yml Makefile | $$(@D)/.
+$(BUILD_DIR)/%.pdf: src/%.typ src/base.typ $$(call deps,src/%.typ) $$(dir src/%)/bibliography.yml Makefile | $$(@D)/.
 	$(TYPST) c $(TYPST_ARGS) $<
 # force moving file for typst seems to always try building locally oO
 	mv -f src/$*.pdf $@

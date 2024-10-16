@@ -66,6 +66,7 @@
         dir: ttb,
         spacing: 2pt,
         line(length: 100%),
+        v(5pt),
         align(
           center + horizon,
           [
