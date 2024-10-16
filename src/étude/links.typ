@@ -205,3 +205,7 @@
 #let spark = link("https://www.adacore.com/about-spark", "SPARK")
 
 #let cvc4 = link("https://cvc4.github.io/", "CVC4")
+
+
+#let windbg = link("https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools")[WinDBG]
+#let rr = link("https://rr-project.org/")[rr]
