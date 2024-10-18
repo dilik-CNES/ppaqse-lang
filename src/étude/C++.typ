@@ -207,11 +207,6 @@ va en partie dépendre de l'utilisation d'outils tiers.
 
   tests: [
 
-#let boost_test = link(
-  "https://www.boost.org/doc/libs/1_85_0/libs/test/doc/html/index.html",
-  [Boost Test Library]
-)
-#let catch2 = link("https://github.com/catchorg/Catch2", "Catch2")
 
 Certains des outils cités pour le C fonctionnent également pour le C++. C'est
 le cas pour #cantata ou #parasoft par exemple. D'autres outils ou bibliothèques
@@ -223,13 +218,6 @@ les rapports de test ou les possibilités de _fuzzing_. Le _mocking_ est
 également disponible via une extension. #catch2 propose sensiblement la même
 chose que #boost_test.
 
-#let gtest = link("https://github.com/google/googletest", "Google Test")
-#let google = link("https://about.google", "Google")
-
-#let safetynet = link(
-  "https://bitbucket.org/rajinder_yadav/safetynet/src/master/",
-  "Safetynet"
-)
 
 #gtest est un cadre logiciel proposé par #google pour le test unitaire. Il est
 très complet et utilisé pour de gros projets. Il permet de découvrir les
@@ -245,11 +233,6 @@ Ruby. L'outil semble cependant moins mature et complet que #gtest.
 #mockpp est une bibliothèque de _mocking_ pour le C++. Elle s'utilise plutôt
 conjointement avec d'autres outils de tests unitaires pour simuler des
 comportements de fonctions ou de classes à la manière de #opmock.
-
-#let testwell_ctc = link(
-  "https://www.verifysoft.com/fr_ctcpp.html",
-  "Testwell CTC++"
-)
 
 #testwell_ctc est un outil commercial qui, comme #cantata, #parasoft ou
 #vectorcast que nous

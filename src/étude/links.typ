@@ -205,3 +205,71 @@
 #let spark = link("https://www.adacore.com/about-spark", "SPARK")
 
 #let cvc4 = link("https://cvc4.github.io/", "CVC4")
+
+
+#let windbg = link("https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools")[WinDBG]
+#let rr = link("https://rr-project.org/")[rr]
+
+#let boost_test = link(
+  "https://www.boost.org/doc/libs/1_85_0/libs/test/doc/html/index.html",
+  [Boost Test Library]
+)
+#let catch2 = link("https://github.com/catchorg/Catch2", "Catch2")
+
+#let gtest = link("https://github.com/google/googletest", "Google Test")
+#let google = link("https://about.google", "Google")
+
+#let safetynet = link(
+  "https://bitbucket.org/rajinder_yadav/safetynet/src/master/",
+  "Safetynet"
+)
+
+
+#let testwell_ctc = link(
+  "https://www.verifysoft.com/fr_ctcpp.html",
+  "Testwell CTC++"
+)
+
+
+#let aunit = link("https://github.com/AdaCore/aunit", "AUnit")
+#let adatest95 = link(
+  "https://www.qa-systems.fr/tools/adatest-95/",
+  "Ada Test 95"
+)
+#let avhen = link("http://ahven.stronglytyped.org/", "Avhen")
+#let ldra = link("https://ldra.com/products/ldra-tool-suite/", "LDRA")
+#let vectorcastAda = link(
+  "https://www.vector.com/int/en/products/products-a-z/software/vectorcast/vectorcast-ada/",
+  "VectorCAST/Ada"
+)
+
+
+#let rtrt = link(
+  "https://www.ibm.com/products/rational-test-realtime",
+  "Rational Test RealTime"
+)
+
+
+#let ptcdobjada = link(
+  "https://www.ptc.com/en/products/developer-tools/objectada",
+  "PTC ObjectAda"
+)
+#let ptcapexada = link(
+  "https://www.ptc.com/en/products/developer-tools/apexada",
+  "PTC ApexAda"
+)
+#let gnatpro = link("https://www.adacore.com/gnatpro", "GNAT Pro")
+#let gnatllvm = link("https://github.com/AdaCore/gnat-llvm", "GNAT LLVM")
+#let gaoc = link(
+  "https://www.ghs.com/products/ada_optimizing_compilers.html",
+  "GreenHills Ada Optimizing Compiler")
+
+#let janusada = link(
+  "http://www.rrsoftware.com/html/blog/ja-312-rel.html",
+  "Janus/Ada"
+)
+
+#let gnatstack = link(
+  "https://www.adacore.com/gnatpro/toolsuite/gnatstack",
+  "GNATstack"
+)

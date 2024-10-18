@@ -463,6 +463,7 @@ propre à une utilisation dans le domaine critique.
 des systèmes d'exploitation et des architectures. Pour simplifier la lecture
 de ce document, nous ne listons ici que les principaux débugueurs connus.
 
+
 #figure(
   table(
     columns: (auto, auto, auto),
@@ -471,9 +472,11 @@ de ce document, nous ne listons ici que les principaux débugueurs connus.
     [*#gdb*], [x86, x86-64, ARM, PowerPC, SPARC, ...], [GPLv3],
     [*#lldb*], [i386, x86-65, AArch64, ARM], [Apache v2],
     [*#totalview*], [x86-64, ARM64, CUDA], [Propriétaire],
-    [*#undo*], [?], [Propriétaire],
+    [*#undo*], [x86-64], [Propriétaire],
     [*#valgrind*], [x86, x86-64, PowerPC, ARMv7], [GPL],
     [*#vsd*], [x86, x86-64], [Propriétaire],
+    [*#windbg*], [x86, x86-64], [Gratuit],
+    [*#rr*], [x86, x86-64, ARM], [GPLv2],
   )
 )
 
@@ -510,6 +513,13 @@ qu'il soit donc compatible avec toutes les architectures supportées par #gcc.
 #vsd est le débugueur associé à la suite de développement #visualstudio
 de #microsoft. Il est propriétaire et ne fonctionne que sous Windows mais
 offre un support avancé de tous les langages supportés par #visualstudio.
+Il ne faut pas confondre #vsd avec #windbg qui est un débugueur plus bas
+niveau pour les plateformes Windows et qui est gratuit.
+
+#rr est un débugueur qui propose la même interface que #gdb mais qui exécute
+le code dans une machine virtuelle et permet de remonter dans le temps et rejouer
+les exécutions de manière déterministe. Cela permet de débuguer plus facilement
+les erreurs aléatoires.
 
   ],
 

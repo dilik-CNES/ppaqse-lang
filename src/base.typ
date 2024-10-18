@@ -66,6 +66,7 @@
         dir: ttb,
         spacing: 2pt,
         line(length: 100%),
+        v(5pt),
         align(
           center + horizon,
           [
@@ -89,7 +90,9 @@
         text(size: 40pt, [*#title*]),
         text(size: 30pt, [*#subtitle*]),
         authors,
-        body
+        body,
+        v(1fr),
+        image("imgs/by.png")
       )
     )
   ]
@@ -240,8 +243,8 @@
           )
         }
       ),
-      v(10%),
-
+      v(1fr),
+      image("imgs/by.png")
 
     )
   )
