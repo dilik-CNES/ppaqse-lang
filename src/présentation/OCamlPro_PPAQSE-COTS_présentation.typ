@@ -20,7 +20,7 @@
   - PME française créée en 2011
   - ADN recherche et liens étroits avec la recherche académique.
   - OCaml : core team, opam & optimisations
-  - R&D langages (DSL) & dette technque (Cobol)
+  - R&D langages (DSL) & dette technique (Cobol)
   - Méthodes formelles (Alt-Ergo)
   - Certification Sécurité (CC EAL6+)
   - Formations (OCaml, Rust, Coq)
@@ -56,157 +56,267 @@
 ]
 
 #slide[
-  == C : Paradigme
+  = C++
 
-  Essentiellement *impératif* et *procédural*
-
-  ```c
-      int add_value(struct state *s, int v)
-      {
-        int code = KO;
-        if (nullptr != s) {
-          s->acc += v;
-          code = OK;
-        }
-        return code;
-      }
-  ```
+  - Créé en 1979 par Bjarne Stroustrup
+  - C++ = C + classes + templates + exceptions + ...
+  - Mêmes usages que le C mais censé être plus efficace/productif
+  - Standardisé : C++98, C++03, C++11, C++14, C++17, C++20, C++23...
+  - ... mais sémantique indéterministe.
 ]
 
 #slide[
-  == C : Mécanismes de protection intrinsèques
+  = Ada
+
+  - Initié par le DoD dans les années 1970
+  - Langage de programmation de haut niveau pour la sûreté
+  - Standardisé : Ada83, Ada95, Ada2005, Ada2012, Ada2023
+  - Sémantique claire
+]
+
+#slide[
+  = Scade
+
+  - Créé dans les années 1990 par VERIMAG/VERILOG
+  - Repris par Esterel Technologies/Ansys
+  - Langage de programmation graphique basé sur Lustre
+  - Propriétaire
+  - Sémantique déterministe
+]
+
+#slide[
+  = OCaml
+
+  - Créé en 1996 par l'INRIA
+  - Lignée des langages ML
+  - Lien étroit avec Coq
+  - Centré sur l'algorithmique et la simplicité
+  - Sémantique mathématique issue du $lambda$-calcul
+]
+
+#slide[
+  = Rust
+
+  - Créé dans les années 2000 chez Mozilla
+  - Première version en 2015
+  - C++ amélioré
+  - Qualifications/standarisation en cours
+]
+
+#slide[
+  = Paradigmes
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto, auto, auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Impératif*],
+      align(center)[*Fonctionnel*],
+      align(center)[*Objet*],
+      align(center)[*Déclaratif*],
+      [C],     [✓], [\~], [],   [],
+      [C++],   [✓], [\~], [✓], [],
+      [Ada],   [✓], [],   [\~], [],
+      [Scade], [], [], [], [_dataflow_, graphique],
+      [OCaml], [✓], [✓], [✓], [],
+      [Rust],  [✓], [✓], [\~], [],
+    )
+  )
+]
+
+#slide[
+  = Mécanismes de protection intrinsèques
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto, auto, auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Typage*],
+      align(center)[*Pointeurs*],
+      align(center)[*Mémoire*],
+      align(center)[*Contrôles*],
+      [C],     [😕], [😨], [😨], [😕],
+      [C++],   [😕], [😨], [😨], [😐],
+      [Ada],   [😊], [😌], [😨], [😊],
+      [Scade], [😊], [😊], [😊], [😊],
+      [OCaml], [😃], [😊], [😃], [😊],
+      [Rust],  [😊], [😕], [😌], [😊],
+    )
+  )
+]
+
+#slide[
+  = Compilateurs
 
   #align(
     center,
     table(
       columns: (auto, auto),
       align: (left, left),
-      align(center)[*Avantage*], align(center)[*Inconvénient*],
-      [Système de type], [Trop rudimentaire et laxe],
-      [ ], [Gestion manuelle des pointeurs],
-      [Analyses des compilateurs], [
-        - Pas activées par défaut
-        - Pas standardisées
-      ],
+      align(center)[*Langage*], align(center)[*Compilateurs*],
+      [C], [GCC, Clang/LLVM, icx, MSVC, AOCC, sdcc, CompCert, ...],
+      [C++], [G++, Clang/LLVM, icx, MSVC, AOCC, C++ Builder, ...],
+      [Ada], [GNAT (GCC), GNAT Pro/LLVM, GreenHills Ada, PTC, Janus/Ada],
+      [Scade], [Scade Suite],
+      [OCaml], [OCaml (ocamlc, ocamlopt)],
+      [Rust], [rustc]
     )
   )
 ]
 
 #slide[
-  == C : Compilateurs
+  = Interfaçage
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: (left, left, left, left),
+      align(center)[*Langage source*], align(center)[*Langage(s) cibles(s)*],
+      [C], [ASM],
+      [C++], [C, ASM],
+      [Ada], [C],
+      [Scade], [C, Ada (out)],
+      [OCaml], [C],
+      [Rust], [C]
+    )
+  )
+]
+
+
+#slide[
+  = Adhérence
 
   #align(
     center,
     table(
       columns: (auto, auto),
       align: (left, left),
-      align(center)[*Compilateur*], align(center)[*Remarques*],
-      [GCC], [La référence],
-      [Clang], [Le challenger],
-      [icc/icx], [Intel],
-      [MSVC], [Microsoft],
-      [AOCC], [AMD],
-      [sdcc], [microcontrôleurs],
-      [CompCert], [Vérifié formellement],
+      align(center)[*Langage*], align(center)[*Adhérence*],
+      [C], [],
+      [C++], [],
+      [Ada], [],
+      [Scade], [],
+      [OCaml], [POSIX (natif), VM (objet)],
+      [Rust], []
     )
   )
 ]
 
 #slide[
-  == C : Interfaçage
+  = Gestionnaires de paquets
 
-  #v(2cm)
-  - Le C permet d'écrire de l'assembleur dans le texte.
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: (left, left),
+      align(center)[*Langage*], align(center)[*Gestionnaire(s) de paquet(s)*],
+      [C], [Clib, Conan, vcpkg],
+      [C++], [Buckaroo, Conan, vcpkg],
+      [Ada], [Alire],
+      [Scade], [],
+      [OCaml], [opam],
+      [Rust], [Cargo]
+    )
+  )
 
-  - Il sert de cible pour la plupart des langages.
-
+  - Agnotisques: Nix, 0install, opam, ...
+  - Systèmes embarqué : Yocto, Buildroot, ...
 ]
 
 #slide[
-  == C : Adhérence
+  = Communauté
 
-  #v(2cm)
-  Aucune, il faut juste un compilateur pour l'architecture cible.
+  #[
+    #set text(size: 18pt)
+    #align(
+      center,
+      table(
+        columns: (auto, auto, auto, auto, auto),
+        align: (left, left),
+        align(center)[*Langage*],
+        align(center)[*Fondation(s)/Association(s)*],
+        align(center)[*Entreprise(s)*],
+        align(center)[*Recherche*],
+        align(center)[*Volume*],
+        [C], [FSF], [+++], [], [+++],
+        [C++], [FSF], [+++], [], [+++],
+        [Ada], [Ada Europe, Ada Resource Association, Ada France], [Adacore, +], [], [+],
+        [Scade], [], [Ansys], [Verimag], [+],
+        [OCaml], [OSF], [Jane Street, OCamlPro, Tarides, +], [INRIA], [+],
+        [Rust],  [RF, Rust France], [AWS, Mozilla, +], [], [++],
+      )
+    )
+  ]
 ]
 
 #slide[
-  == C : Gestionnaires de paquets
-
-  - Deux gestionnaires classiques : Conan & vcpkg
-  - Un gestionnaire de _vendoring_ : Clib
-  - Possibibilité d'utiliser des gestionnaires agnostriques (Nix, 0install, ...)
-
-  Pour les systèmes embarqués : Buildroot, Yocto, ... ont leur propre
-  _packaging_.
-]
-
-#slide[
-  == C : Communauté
-
-  - Très large
-  - Entreprises
-  - OS (FSF)
-  - Système (Linux)
-  - Embarqué
-]
-
-#slide[
-  == C : Debugueurs
+  = Debugueurs
 
   #{
     set text(size: 16pt)
 
     figure(
       table(
-        columns: (auto, auto, auto),
-        [*Debugueur*], [*Architectures*], [*License*],
-        [*#linaro*], [x86-64, ARM, PowerPC, Intel Xeon Phi, CUDA], [Propriétaire],
-        [*#gdb*], [x86, x86-64, ARM, PowerPC, SPARC, ...], [GPLv3],
-        [*#lldb*], [i386, x86-65, AArch64, ARM], [Apache v2],
-        [*#totalview*], [x86-64, ARM64, CUDA], [Propriétaire],
-        [*#undo*], [x86-64], [Propriétaire],
-        [*#valgrind*], [x86, x86-64, PowerPC, ARMv7], [GPL],
-        [*#vsd*], [x86, x86-64], [Propriétaire],
-        [*#windbg*], [x86, x86-64], [Gratuit],
-        [*#rr*], [x86, x86-64, ARM], [GPLv2],
+        columns: (auto, auto),
+        align(center)[*Langage*],
+        align(center)[*Debugueur(s)*],
+        [C], [#gdb, #lldb, #totalview, #undo, #valgrind, #vsd, #windbg, #rr, #linaro],
+        [C++], [#gdb, #lldb, ...],
+        [Ada], [#gdb, #lldb],
+        [Scade], [Scade Suite],
+        [OCaml], [ocamldebug (objet), #gdb, #lldb, ...],
+        [Rust], [#gdb, #lldb, #windbg]
+
       )
     )
   }
 ]
 
 #slide[
-  == C : Tests
+  = Tests
 
-  #figure(
+  #align(
+    center,
     table(
-      columns: (auto, auto, auto, auto, auto),
-      [*Outil*],               [*Tests*], [*Generation*], [*Gestion*], [_*mocking*_],
-      [*#cantata*],            [UIRC],   [+++],          [✓],         [],
-      [*#criterion*],          [U],      [+],            [],          [],
-      [*#libcester*],          [U],      [+],            [✓],         [✓],
-      [*#novaprova*],          [U],      [+],            [✓],         [✓],
-      [*#opmock*],             [U],      [++],           [],           [✓],
-      [*#parasoft*],           [UC],     [++],            [✓],         [],
-      [*#TPT*],                [UINC],   [+++],           [✓],         [],
-      [*#vectorcast*],         [UC],     [++],            [✓],         [✓],
+      columns: (auto, auto),
+      [C], [#cantata, #parasoft, #TPT, #vectorcast, ...],
+      [C++], [#cantata, #parasoft, #TPT, #vectorcast, #testwell_ctc, #boost, #gtest, ...],
+      [Ada], [#aunit, #adatest95, #avhen, #ldra, #vectorcastAda, #rtrt],
+      [Scade], [Scade Suite],
+      [OCaml], [#ounit, #alcotest, #qcheck, #crowbar, PPX, Cram, ...],
+      [Rust], [_builtin_, quickcheck, proptest, mockall, ...]
+
     ),
-  ) <c-test>
+  )
 ]
 
 #slide[
 
-  == C : Parsing
+  = Parsing
 
-  Il existe beaucoup d'outils d'analyse syntaxique en C mais les plus
-  connus/matures qui suffisent dans la grande majorité des cas sont:
-  - Flex/Bison
-  - ANTLR
-
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      [C], [Flex/Bison, ANTLR, ...],
+      [C++], [Flex/Bison, ANTLR, ...],
+      [Ada], [AFlex/AYacc],
+      [Scade], [],
+      [OCaml], [sedlex, ulex, Menhir, ocamllex, ocamlyacc, angstrom, dypgen, ...],
+      [Rust], [LALRPOP, Hime, Syntax]
+    )
+  )
 
 ]
 
 #slide[
-  == C : Méta-programmation
+  = Méta-programmation (C)
 
   - Le préprocesseur permet de faire précalculer des expressions simples
     par le compilateur (souvent inutile)
@@ -224,9 +334,69 @@
 ]
 
 #slide[
-  == C : Dérivation
+  = Méta-programmation (C++)
 
-  - Les macros permettent une forme archaïque de dérivation
+  Les _templates_ sont Turing-complets et permettent de calculer virtuellement
+  n'importe quoi qui ne dépende pas d'une IO.
+  ```cpp
+  template<unsigned int N> struct Fact {
+      enum {Value = N * Fact<N - 1>::Value};
+  };
+  template<> struct Fact<0> {
+      enum {Value = 1};
+  };
+  unsigned int x = Fact<4>::Value;
+  ```
+]
+
+#slide[
+  = Méta-programmation (Ada & Scade)
+
+  Pas de support de méta-programmation.
+]
+
+#slide[
+  = Méta-programmation (OCaml)
+
+  Les PPX permettent de transformer le code source avant la compilation
+
+  ```ocaml
+  let main () =
+    [%init 42];
+    let v = some_calculus () in
+    [%do_something v]
+  ```
+]
+
+#slide[
+  = Méta-programmation (Rust)
+
+  Les macros permettent de transformer le code source avant la compilation
+
+  #[
+    #set text(size: 18pt)
+    ```rust
+    macro_rules! vec {
+        ($($x:expr),*) => {
+            {
+                let mut temp_vec = Vec::new();
+                $(temp_vec.push($x);)*
+                temp_vec
+            }
+        };
+    }
+    ```
+
+    ```rust
+    let v = vec![1, 2, 3];
+    ```
+  ]
+]
+
+#slide[
+  = Dérivation (C)
+
+  Les macros permettent une forme archaïque de dérivation
   ```c
   #define COULEUR X(ROUGE, 0xFF0000) X(VERT, 0x00FF00) X(BLEU, 0x0000FF)
   #define X(c, v) c = v,
@@ -235,105 +405,248 @@
   ```
 ]
 
- #slide[
-  == C : Runtime Errors
+#slide[
+  = Dérivation (C++)
 
-  Les analyseurs statiques corrects permettant de se prémunir contre des
-  erreurs à _runtime_ sont:
-  - #astree
-  - #eclair
-  - #framac
-  - #polyspace
-  - #tisanalyser
+  On peut avoir une forme de dérivation via les _templates_:
+  ```cpp
+  template <typename T>
+  struct is_pointer {
+    static const bool value = false;
+  };
+  template <typename T>
+  struct is_pointer<T*> {
+    static const bool value = true;
+  };
+  ```
+]
+
+#slide[
+  = Dérivation (Ada & Scade)
+
+  Pas de support de dérivation.
+]
+
+#slide[
+  = Dérivation (OCaml)
+
+  Les PPX permettent de transformer le code source avant la compilation
+
+  ```ocaml
+  type couleur = Rouge | Vert | Bleu | RGB of int * int * int
+  [@@deriving show]
+
+  (* val show : couleur -> string
+     val pp_couleur : Format.formatter -> couleur -> unit *)
+  ```
+]
+
+#slide[
+  = Dérivation (Rust)
+
+  Les macros permettent de transformer le code source avant la compilation
+
+  ```rust
+  #[derive(Debug)]
+  struct Point {
+      x: i32,
+      y: i32,
+  }
+  ```
+]
+
+
+
+ #slide[
+  = Runtime Errors
+
+  Analyseurs sans faux négatifs:
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Analyseurs*],
+      [C], [#astree, #eclair, #framac, #polyspace, #tisanalyser],
+      [C++], [#astree (C++17), #framac (?)],
+      [Ada], [#codepeer, #polyspace, #spark],
+      [Scade], [Scade suite ?, + outils C/Ada sur le code généré],
+      [OCaml], [],
+      [Rust], [(Mirai)],
+    )
+  )
  ]
 
  #slide[
-  == C : Formalisation
+  = Formalisation
 
-  #[
-    #set text(size: 18pt)
-    - Par transpilation (automatique ou manuelle) vers Coq (VerifiedC):
-      #align(center,
-        grid(
-          columns: (auto, auto, auto, auto, auto),
-          [C], [$=>$], [Coq], [$=>$], [Preuves (Hoare, WP)]
-        )
-      )
+  Il y a globalement deux approches :
 
-    - Par annotation et preuve (semi) automatiques (Frama-C, RedefinedC, VerCors):
+  - Par transpilation de ou vers Coq (ou autre)
+    - Langage $=>$ Coq $=>$ Preuves (Hoare, WP)
+    - Coq + Preuves $=>$ Langage
+  - Par annotation et preuve (semi) automatiques:
+    #[
+      #set text(size: 16pt)
       ```c
       /*@ requires \valid(a) && \valid(b);
-      @ ensures A: *a == \old(*b) ;
-      @ ensures B: *b == \old(*a) ;
-      @ assigns *a,*b ;
-      @*/
+        @ ensures A: *a == \old(*b) ;
+        @ ensures B: *b == \old(*a) ;
+        @ assigns *a,*b ;
+        @*/
       void swap(int *a,int *b);
       ```
-  ]
-
+    ]
  ]
 
 
 #slide[
-  == C : WCET
+  = WCET
 
-  Il existe plusieurs outils basés sur une analyse statique binaire :
-  - #chronos (IR)
-  - #bound-T
-  - #aiT
-  - #sweet (IR)
-  - #otawa (modulaire)
-  - #rapidtime
+  Le WCET par analyse statique fonctionne par analyse du binaire avec les
+  contraintes de l'architecture cible.
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Analyseurs*],
+      [C], [#chronos, #bound-T, #aiT, #sweet, #otawa, #rapidtime],
+      [C++], [outils C],
+      [Ada], [#rapidtime, #aiT],
+      [Scade], [#aiT],
+      [OCaml], [outils C],
+      [Rust], [outils C],
+    )
+  )
+]
+
+#slide[
+  = Pile
+
+  L'analyse statique de la pile fonctionne également par analyse du
+  binaire:
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Analyseurs*],
+      [C], [#stackanalyser, #armlink, #gcc],
+      [C++], [outils du C],
+      [Ada], [#gnatstack],
+      [Scade], [#stackanalyser],
+      [OCaml], [outils du C (natif)],
+      [Rust], [outils du C],
+    )
+  )
+]
+
+#slide[
+  = Qualité numérique
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Analyseurs statiques*],
+      align(center)[*Calcul dynamique*],
+      [C], [#fluctuat, #astree, #polyspace, #gappa (+ annotations)], [#cadna, #mpfr, #gmp],
+      [C++], [#astree, #polyspace], [#cadna, #mpfr, #boost, #xsc],
+      [Ada], [_builtin_, #polyspace, #spark (+annotations)], [#mpfr, #gmp],
+      [Scade], [], [Scade library ?],
+      [OCaml], [], [#mpfr, #gmp],
+      [Rust], [], [biblothèques, #mpfr, #gmp],
+    )
+  )
 
 ]
 
 #slide[
-  == C : Pile
+  = Assurances
 
-  Pour l'analyse statique de la pile:
-  - #gcc
-  - #stackanalyser
-  - #t1stack (+ annotations)
-  - #armlink
+  #align(
+    center,
+    table(
+      columns: (auto, auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Intrinsèque*],
+      align(center)[*Externe*],
+      [C], [😨], [😊],
+      [C++], [😕], [😕],
+      [Ada], [😊], [😊],
+      [Scade], [😊], [😊],
+      [OCaml], [😊], [😨],
+      [Rust], [😊], [😕],
+    )
+  )
 ]
 
 #slide[
-  == C : Qualité numérique
 
-  #[
-    #set text(size: 18pt)
-    Se prémunir contre les erreurs numériques (overflow, précision, ...)
-    - par analyse statique:
-      - #fluctuat
-      - #astree
-      - #polyspace
-      - #gappa (+ annotations #framac)
-    - par un calcul dynamique:
-      - #cadna
-      - #mpfr
-      - #gmp
-  ]
+  = Assurances / Coût (Sécurité)
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto, auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Intrinsèque*],
+      align(center)[*Externe*],
+      align(center)[*Coût*],
+      [C], [😨], [😊], [😨],
+      [C++], [😕], [😕], [😕],
+      [Ada], [😊], [😊], [😕],
+      [Scade], [😊], [😊], [😌],
+      [OCaml], [😊], [😨], [😊],
+      [Rust], [😊], [😕], [😕],
+    )
+  )
+]
+
+#slide[
+
+  = Critique
+
+  #align(
+    center,
+    table(
+      columns: (auto, auto),
+      align: left,
+      align(center)[*Langage*],
+      align(center)[*Domaines critiques*],
+      [C], [Tous],
+      [C++], [Tous],
+      [Ada], [Spatial, Aéronautique, Ferroviaire ],
+      [Scade], [Aéronautique, Ferroviaire, Nucléaire],
+      [OCaml], [Outillage (Astree, KCG, ...)],
+      [Rust], [],
+    )
+  )
+]
+
+#slide[
+
+  = Conclusion
+
+  - Quand on peut, privilégier les langages métiers
+  - OCaml est souvent un bon choix pour l'outillage
+  - Rust est à la mode mais encore jeune pour être recommandé sans réserve
+  - Innover pour s'adapter aux nouveaux besoins/contraintes
 
 ]
 
 #slide[
-  == C : Assurances
 
-  Niveau d'assurance donné par le C est paradoxal :
-  - quasiment pas de sécurité intrinsèque
-  - l'histoire et l'usage ont apporté des outils externes qui fiabilisent le C
+  #v(3cm)
+  #align(center)[*Questions ?*]
 
-  Le développpement reste relativement peu productif et coûteux:
-  - même un bon programmeur fait des erreurs
-  - A/R entre services de développement et de vérification
-  - licences, formations, ...
-]
-
-#slide[
-  == C : Critique
-
-  Le C est utilisé dans tous les domaines critiques soit
-  - directement pour écrire le système (en entier ou au moins les interfaces
-    avec le matériel);
-  - indirectement comme langage cible (#Ada, #Scade, ...).
 ]

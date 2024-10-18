@@ -90,7 +90,9 @@
         text(size: 40pt, [*#title*]),
         text(size: 30pt, [*#subtitle*]),
         authors,
-        body
+        body,
+        v(1fr),
+        image("imgs/by.png")
       )
     )
   ]
