@@ -157,10 +157,6 @@
   ],
 
   pile: [
-    #let gnatstack = link(
-      "https://www.adacore.com/gnatpro/toolsuite/gnatstack",
-      "GNATstack"
-    )
 
     Les outils analysant l'exécutable peuvent le faire tout autant pour les
     programmes #Ada. Pour les outils ciblant spécifiquement #Ada, il y
@@ -369,24 +365,6 @@
 
   tests: [
 
-    #let aunit = link("https://github.com/AdaCore/aunit", "AUnit")
-    #let adatest95 = link(
-      "https://www.qa-systems.fr/tools/adatest-95/",
-      "Ada Test 95"
-    )
-    #let avhen = link("http://ahven.stronglytyped.org/", "Avhen")
-    #let ldra = link("https://ldra.com/products/ldra-tool-suite/", "LDRA")
-    #let vectorcastAda = link(
-      "https://www.vector.com/int/en/products/products-a-z/software/vectorcast/vectorcast-ada/",
-      "VectorCAST/Ada"
-    )
-
-
-    #let rtrt = link(
-      "https://www.ibm.com/products/rational-test-realtime",
-      "Rational Test RealTime"
-    )
-
     Les différents outils de tests recensés pour #Ada sont inddiqués dans
     la @ada-test.
 
@@ -401,7 +379,7 @@
         [*#vectorcastAda*],      [UC],      [++],           [✓],           [✓],
         [*#rtrt*],               [UIC],     [],             [],           [],
       ),
-      caption: [Comparaison des outils de tests pour le langage C],
+      caption: [Comparaison des outils de tests pour le langage #Ada],
     ) <ada-test>
 
     #aunit et #avhen sont des implémentations xUnit pour #Ada. Les fonctionnalités sont
@@ -446,24 +424,6 @@
     Parmi tous les compilateurs Ada, nous listons uniquement ceux qui semblent
     maintenus et de qualité industrielle.
 
-    #let ptcdobjada = link(
-      "https://www.ptc.com/en/products/developer-tools/objectada",
-      "PTC ObjectAda"
-    )
-    #let ptcapexada = link(
-      "https://www.ptc.com/en/products/developer-tools/apexada",
-      "PTC ApexAda"
-    )
-    #let gnatpro = link("https://www.adacore.com/gnatpro", "GNAT Pro")
-    #let gnatllvm = link("https://github.com/AdaCore/gnat-llvm", "GNAT LLVM")
-    #let gaoc = link(
-      "https://www.ghs.com/products/ada_optimizing_compilers.html",
-      "GreenHills Ada Optimizing Compiler")
-
-    #let janusada = link(
-      "http://www.rrsoftware.com/html/blog/ja-312-rel.html",
-      "Janus/Ada"
-    )
 
     #figure(
 
