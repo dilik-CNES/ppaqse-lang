@@ -33,6 +33,7 @@
   "Gappa"
 )
 #let gcc = link("https://gcc.gnu.org", "GCC")
+#let ghs = link("https://ghs.com/products/compiler.html", "GreenHills MULTI")
 #let gliwa = link("https://www.gliwa.com/", "Gliwa")
 #let gmp = link("https://gmplib.org", "GMP")
 

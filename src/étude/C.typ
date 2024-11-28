@@ -421,6 +421,7 @@ distinguer dans le contexte de l'embarqué critique.
       La liste exhaustive est disponible à l'adresse
       https://gcc.gnu.org/install/specific.html.
     ]], [GPLv3+],
+    [*#ghs*], [IA-32, x86_64, ARM, PowerPC, MIPS, RH850, RISC-V, Aurix, ...], [Propriétaire],
     [*#icx (#intel C/C++ Compiler)*], [IA32, x86-64], [Propriétaire, Gratuit],
     [*#msvc*], [IA-32, x86_64, ARM], [Propriétaire],
     [*#sdcc*], [microprocesseurs#footnote[Intel MCS51, Maxims, Freescale, ... La liste est disponible sur le site du compilateur : http://sdcc.sourceforge.net/]], [~GPLv2],
@@ -436,6 +437,9 @@ des performances équivalentes.
 #gcc est le compilateur de référence pour le langage C depuis les années 1990.
 Il est très complet et supporte un grand nombre d'architectures dont seulement
 une petite partie est indiquée dans le tableau.
+
+#ghs est un compilateur commercial utilisé dans beaucoup de systèmes critiques, 
+principalement automobile et aéronautique.
 
 #icx est le compilateur d'#intel spécifique à aux processeurs et FPGA de la
 marque. Depuis 2021, il utilise le _backend_ #llvm. Enfin, #msvc est le
