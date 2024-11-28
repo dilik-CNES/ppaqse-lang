@@ -24,12 +24,12 @@
       et IEC 61508 (SIL 4) pour les plateformes x86 et ARM. Celles-ci sont mises à
       jour tous les ans.
       <ferrocene>
-    2. La fondation #Rust a lancé un projet de rédaction d'une spécification.
+    2. La fondation #Rust a lancé un projet de #link("https://github.com/rust-lang/rust/issues/113527")[rédaction d'une spécification].
       Ce projet semble sérieux et devrait aboutir a une
       spécification qui serait mise à jour à chaque parution d'une nouvelle
       version du compilateur (toutes les six semaines). Contrairement à la
-      specification de Ferrocene, qui n'est pas un standard du langage mais se
-      borne à décrire le fonctionnement d'un compilateur donné, la specification
+      spécification de Ferrocene, qui n'est pas un standard du langage mais se
+      borne à décrire le fonctionnement d'un compilateur donné, la spécification
       proposée par la fondation serait officielle et pourrait à terme aboutir à
       un standard.
 
@@ -127,7 +127,7 @@
     La vérification formelle de code #Rust suscite un certain intérêt puisque
     malgré la jeunesse du langage, il y a déjà plusieurs initiatives sur le sujet.
     Toutefois, il s'agit de projets académiques et aucun ne bénéficie d'un
-    support commercial pour le moment.
+    support commercial pour le moment. TrustInSoft prévoit un support commercial en 2025.
 
     *Creusot*
 
@@ -501,6 +501,8 @@
     et les performances mis en avant par le langage. Il suffit de voir le
     nombre de paquets logiciels crées pour #Rust qui atteint plus de 130 0000
     sur #crates_io en moins de 10 ans#footnote[https://lib.rs/stats].
+
+
   ],
 
   assurances: [
@@ -569,8 +571,10 @@
 
   critique: [
     Il n'existe à ce jour pas de communication officielle sur un logiciel
-    embarqué critique qui serait en #Rust. Toutefois les demarches de
-    Ferocene et la fondation #Rust indiquent clairement une volonté de
+    embarqué critique qui serait en #Rust. Toutefois les démarches de
+    Ferrocene et la fondation #Rust, en particulier le groupe 
+    #link("https://foundation.rust-lang.org/news/announcing-the-safety-critical-rust-consortium/")[Safety-Critical Rust]
+    indiquent clairement une volonté de
     pénétrer le marché du logiciel critique et certains constructeurs
     automobiles ont déjà manifesté leur intérêt pour le langage.
   ]
