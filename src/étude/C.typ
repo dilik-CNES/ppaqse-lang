@@ -107,7 +107,7 @@
 
       table(
         columns: (auto, auto, auto, auto, auto, auto),
-        [*Erreur*],                      [*Astrée*], [*ECLAIR*], [*Frama-C*], [*Polyspace*], [*TIS Analyser*],
+        [*Erreur*],                      [*Astrée*], [*ECLAIR*], [*Frama-C*], [*Polyspace*], [*TIS Analyzer*],
         [*Division par 0*],              [✓],        [✓],         [✓],          [✓],            [✓],
         [*Débordement de tampon*],       [✓],        [✓],         [✓],          [✓],            [✓],
         [*Déréférencement de NULL*],     [✓],        [✓],         [],           [✓],            [],

@@ -470,7 +470,7 @@
       align(center)[*Langage*],
       align(center)[*Analyseurs*],
       [C], [#astree, #eclair, #framac, #polyspace, #tisanalyser],
-      [C++], [#astree (C++17), #framac (?)],
+      [C++], [#astree (C++17), #framac (?), #tisanalyser (C++20)],
       [Ada], [#codepeer, #polyspace, #spark],
       [Scade], [Scade suite ?, + outils C/Ada sur le code généré],
       [OCaml], [],
