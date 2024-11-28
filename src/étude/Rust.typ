@@ -9,9 +9,9 @@
     #Rust est un langage de programmation créé par Graydon Hoare en 2006,
     soutenu par la fondation Mozilla à partir de 2009, et dont la première
     version stable fût publiée en 2015. Le projet est devenu indépendant de
-    Mozilla et est soutenu par sa propre entité légale: la fondation #Rust.
+    Mozilla et est soutenu par sa propre entité légale : la fondation #Rust.
     Conçu
-    comme un successeur aux langages C et C++, #Rust cherche à concillier
+    comme un successeur aux langages C et C++, #Rust cherche à concilier
     sûreté, performance et correction du code concurent. Il est souvent utilisé
     pour des applications systèmes, des logiciels embarqués, des navigateurs et
     des applications web.
@@ -19,10 +19,10 @@
     Il n'existe pas à l'heure actuelle de standard du langage, mais deux
     projets dans ce sens existent :
     1. Les entreprises AdaCore et Ferrous Systems ont développé une version
-      qualifiée du compilateur standard Rust, nommée
-      #link("https://ferrocene.dev/en/")[Ferrocene], certifiée ISO26262 (ASIL D)
-      et IEC 61508 (SIL 4) pour les plateformes x86 et ARM. Celle-ci est mise à
-      jour tous les trois mois, soit toutes les deux à trois versions de Rust.
+      qualifiée du compilateur standard Rust, nommés respectivement #link("https://www.adacore.com/gnatpro-rust")[GNATPro] et 
+      #link("https://ferrocene.dev/en/")[Ferrocene], certifiés ISO26262 (ASIL D)
+      et IEC 61508 (SIL 4) pour les plateformes x86 et ARM. Celles-ci sont mises à
+      jour tous les ans.
       <ferrocene>
     2. La fondation #Rust a lancé un projet de rédaction d'une spécification.
       Ce projet semble sérieux et devrait aboutir a une
@@ -47,7 +47,7 @@
     qui prend en entrée une liste de chaînes de caractères représentant des
     entiers et compte combien sont plus petits que 10.
 
-    Dans un style fonctionnel:
+    Dans un style fonctionnel :
 
     #figure(
     ```rust
@@ -60,7 +60,7 @@
     ```
     )
 
-    et l'équivalent dans un style impératif:
+    et l'équivalent dans un style impératif :
 
     #figure(
     ```rust
@@ -139,7 +139,7 @@
     specification
     _pearlite_ en code WhyML, utilisé ensuite par l'outil Why3. A ce jour, il a
     été utilisé pour vérifier formellement un SAT solver, CreuSAT.
-    Voici un exemple d'utilisation de spécification #creusot:
+    Voici un exemple d'utilisation de spécification #creusot :
     ```rust
     use creusot_contracts::*;
 
@@ -166,7 +166,7 @@
       x - 1
     }
     ```
-    donnera une erreur lors de la compilation:
+    donnera une erreur lors de la compilation :
     ```
     error[FLUX]: postcondition might not hold
     --> test0.rs:3:5
@@ -194,7 +194,7 @@
     #link("https://github.com/verus-lang/verus")[Verus] permet également
     d'ajouter des spécifications à du code #Rust, et de vérifier qu'elles sont
     satisfaites pour toute execution possible du programme. Il s'appuie
-    directement sur le solveur SMT #z3. Voici un exemple d'utilisation:
+    directement sur le solveur SMT #z3. Voici un exemple d'utilisation :
     ```rust
     fn octuple(x1: i8) -> i8
         requires
@@ -229,7 +229,7 @@
     }
     ```
 
-    On ne peut pas accéder à la valeur booléenne sans vérifier l'erreur: le
+    On ne peut pas accéder à la valeur booléenne sans vérifier l'erreur : le
     code ci-dessous donne une erreur de compilation.
 
     ```rust
@@ -258,7 +258,7 @@
     ```
 
     Il en est de même si on oublie de vérifier qu'une fonction à effet de
-    bord n'a pas retourné d'erreur:
+    bord n'a pas retourné d'erreur :
 
     ```rust
     fn write(path: impl AsRef<Path>, content: &str) -> Result<(), std::io::Error> {
@@ -270,7 +270,7 @@
     }
     ```
 
-    on obtient alors le warning:
+    on obtient alors le warning :
 
     ```
     warning: unused `Result` that must be used
@@ -293,7 +293,7 @@
     qui permet de garantir la sûreté mémoire au moment de la compilation
     sans avoir recours à un rammasse-miettes au _runtime_.
     Celui-ci, lié au système d'_ownership_ permet d'éviter les erreurs
-    suivantes:
+    suivantes :
     - _use after free_
     - _data races_
     - _dangling pointers_
@@ -303,7 +303,7 @@
 
   tests: [
     #Rust inclut un cadre de test standard qui permet de gérer les tests
-    unitaires via des annotations et des macros:
+    unitaires via des annotations et des macros :
     ```rust
     #[cfg(test)]
     mod tests {
@@ -345,7 +345,7 @@
     compilateur standard `rustc`, il n'existe aujourd'hui pas de
     compilateur alternatif utilisable.
 
-    On peut néanmoins mentionner les projets suivants:
+    On peut néanmoins mentionner les projets suivants :
     - #link("https://rust-gcc.github.io/")[*gccrs*] vise à développer un
       _frontend_ #Rust pour #gcc. L'ensemble formerait un compilateur
       entièrement différent de `rustc`.
@@ -371,12 +371,12 @@
   metaprog: [
     Le système de macro de #Rust est expressement fait pour permettre la
     métaprogrammation de manière hygiénique. Par exemple, le code suivant
-    permet de créer un vecteur de trois entiers:
+    permet de créer un vecteur de trois entiers :
     ```rust
     let v: Vec<i32> = vec![1, 2, 3];
     ```
     où le symbole `!` indique l'appel à une macro (ici `vec`). Cette macro
-    pourrait être définie comme suit:
+    pourrait être définie comme suit :
     ```rust
     macro_rules! vec {
         ($($x:expr),*) => {{
@@ -410,7 +410,7 @@
 
     Au niveau des _lexers_, il n'y a que #re2c supporte #Rust. #lalrpop a
     également un générateur de _lexer_ intégré. Pour les _parsers_, il y en
-    a essentiellement trois: #lalrpop, #hime et #syntax. Notons que #lalrpop
+    a essentiellement trois : #lalrpop, #hime et #syntax. Notons que #lalrpop
     embarque le _parsing_ dans #Rust via des macros procédurales.
 
     #figure(
@@ -457,7 +457,7 @@
     (`let ast = syn::parse(input).unwrap();`) en un bout d'AST puis contruit
     un nouveau code
     #Rust (`let gen = quote! { ... };`) avec les informations contenues dans
-    l'AST. En définissant le trait `HelloMacro` par ailleurs:
+    l'AST. En définissant le trait `HelloMacro` par ailleurs :
     ```rust
     pub trait HelloMacro {
         fn hello_macro();

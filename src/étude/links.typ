@@ -65,7 +65,7 @@
   link("https://www.mathworks.com/products/polyspace.html", "Polyspace")
 }
 #let pvs = link("https://pvs.csl.sri.com", "PVS")
-#let rapidtime = {
+#let rapitime = {
   link("https://www.rapitasystems.com/products/rapitime", "RapiTime")
 }
 #let redefinedc = link("https://gitlab.mpi-sws.org/iris/refinedc", "RefinedC")

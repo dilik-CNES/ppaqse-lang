@@ -8,13 +8,13 @@ algorithmiques au problèmes posés. Cette manière d'aborder les problèmes est
 ce qu'on appelle le _paradigme_ du langage.
 
 Les paradigmes les plus courants des langages informatiques sont la plupart du
-temps les suivants:
+temps les suivants :
 - #paradigme[impératif];
 - #paradigme[fonctionnel];
 - #paradigme[objet].
 
 Il existe d'autres paradigmes moins répandus mais qui concernent
-les langages de programmation du rapport:
+les langages de programmation du rapport :
 - #paradigme[déclaratif];
 - #paradigme[contrat]
 - #paradigme[synchrone].
@@ -259,7 +259,7 @@ Les contrats permettent
 de clarifier la sémantique du programme et de réduire le nombre de _bugs_. Ils
 jouent ainsi un rôle complémentaire aux types et aux commentaires.
 
-On distingue quatre types d'assertions:
+On distingue quatre types d'assertions :
 - Les _préconditions_ qui doivent être vérifiées à l'entrée d'une fonction ou
   d'une procédure ;
 - Les _postconditions_ qui doivent être vérifiées à la sortie d'une fonction
@@ -273,7 +273,7 @@ On distingue quatre types d'assertions:
 
 L'exemple ci-dessous est une implémentation de l'algorithme d'Euclide en Eiffel
 avec un contrat qui assure que l'on fournit une entrée valide et que
-l'algorithme termine:
+l'algorithme termine :
 
 ```eiffel
  gcd (value_1, value_2: INTEGER): INTEGER
@@ -319,7 +319,7 @@ c'est-à-dire des systèmes qui maintiennent en permanence une interaction avec
 un environnement et qui doivent être en mesure d'y réagir de façon synchrone,
 sûre et déterministe.
 
-La famille des langages synchrones est elle-même divisée en deux familles:
+La famille des langages synchrones est elle-même divisée en deux familles :
 - les langages _dataflow_ (à _flots de données_);
 - les langages _orientés contrôle_.
 
@@ -328,7 +328,7 @@ l'idée que les données sont variables au cours du temps et forment des _flôts
 et que les opérations des combinateurs de flôts. Par exemple, le flôt `x` de
 type entier est vu d'un point de vue logique comme une suite infinie de valeurs
 entières. Si elle est constante (par exemple 1), on peut la représenter par
-de la manière suivante:
+de la manière suivante :
 
 #align(
    center,
@@ -341,7 +341,7 @@ de la manière suivante:
 
 Si l'on combine ce flôt avec un autre flôt `y` variable et l'addition, on
 obtient un autre flôt `z` qui varie lui aussi au cours du temps en suivant les
-valeurs de `x` et `y`:
+valeurs de `x` et `y` :
 
 #align(
    center,
@@ -362,7 +362,7 @@ s'exprime par les structures de contrôle du langage qui opèrent sur des signau
 équivalent aux flôts précédents mais dont la valeur peu être présente ou
 absente. On distingue alors les instructions qui _prennent du temps_ de celles
 qui sont considérées comme logiquement instantannées. Voici par exemple un
-programme ReactiveML (un surchouche réactive au dessus d'OCaml):
+programme ReactiveML (un surchouche réactive au dessus d'OCaml) :
 
 ```ocaml
 let process produce nat =
