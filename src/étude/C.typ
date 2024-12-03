@@ -90,7 +90,7 @@
   ],
 
   runtime: [
-    Nous avons comparés plusieurs analyseurs statiques permettant de
+    Nous avons comparé plusieurs analyseurs statiques permettant de
     détecter des erreurs au _runtime_. Parmi ceux-ci, nous
     avons uniquement considéré les cinq qui ont la propriété d'être _corrects_
     et de garantir l'absence de certaines catégories de _bug_ :
@@ -107,7 +107,7 @@
 
       table(
         columns: (auto, auto, auto, auto, auto, auto),
-        [*Erreur*],                      [*Astrée*], [*ECLAIR*], [*Frama-C*], [*Polyspace*], [*TIS Analyser*],
+        [*Erreur*],                      [*Astrée*], [*ECLAIR*], [*Frama-C*], [*Polyspace*], [*TIS Analyzer*],
         [*Division par 0*],              [✓],        [✓],         [✓],          [✓],            [✓],
         [*Débordement de tampon*],       [✓],        [✓],         [✓],          [✓],            [✓],
         [*Déréférencement de NULL*],     [✓],        [✓],         [],           [✓],            [],
@@ -142,9 +142,9 @@
 
   wcet: [
     La complexité du calcul statique du WCET fait qu'il y a peu d'outil
-    disponibles. Nous en avons comparés six: #chronos, #bound-T,
-    #aiT, #sweet, #otawa et #rapidtime. #chronos, #sweet et #otawa sont des outils
-    académiques tandis que #aiT et #rapidtime sont des outils commerciaux.
+    disponibles. Nous en avons comparé six : #chronos, #bound-T,
+    #aiT, #sweet, #otawa et #rapitime. #chronos, #sweet et #otawa sont des outils
+    académiques tandis que #aiT et #rapitime sont des outils commerciaux.
     #bound-T est à la base un outil commercial mais qui n'est plus maintenu et qui
     a été rendu _open source_.
 
@@ -188,7 +188,7 @@
           - TriCore,
           - Risc-V
         ],
-        [*RapidTime*], [],                [],                 [✓],              text(size: 8pt)[
+        [*#rapitime*], [],                [],                 [✓],              text(size: 8pt)[
           - ARM (7, 9, 11, Cortex-A, Cortex-R, Cortex-M)
           - Analog Devices
           - Atmel
@@ -274,7 +274,7 @@
   ],
 
   numerique: [
-    La qualité numérique peut être analysée de deux manières: statiquement et
+    La qualité numérique peut être analysée de deux manières : statiquement et
     dynamiquement. Les outils #fluctuat, #astree et #polyspace font partie
     des outils d'analyse statique. #polyspace détecte essentiellement des
     erreurs à _runtime_ comme la division par 0, les dépassements de capacité et
@@ -364,7 +364,7 @@ par exemple).
   ],
 
   tests: [
-Nous avons comparés plusieurs outils de tests pour le langage C. Parmi ceux-ci,
+Nous avons comparé plusieurs outils de tests pour le langage C. Parmi ceux-ci,
 se dégagent #cantata, #parasoft, #TPT et #vectorcast qui offrent un support de
 test étendu pour le C. Ils fournissent également :
 - de la génération de test à des degrés divers ;
@@ -421,6 +421,7 @@ distinguer dans le contexte de l'embarqué critique.
       La liste exhaustive est disponible à l'adresse
       https://gcc.gnu.org/install/specific.html.
     ]], [GPLv3+],
+    [*#ghs*], [IA-32, x86_64, ARM, PowerPC, MIPS, RH850, RISC-V, Aurix, ...], [Propriétaire],
     [*#icx (#intel C/C++ Compiler)*], [IA32, x86-64], [Propriétaire, Gratuit],
     [*#msvc*], [IA-32, x86_64, ARM], [Propriétaire],
     [*#sdcc*], [microprocesseurs#footnote[Intel MCS51, Maxims, Freescale, ... La liste est disponible sur le site du compilateur : http://sdcc.sourceforge.net/]], [~GPLv2],
@@ -436,6 +437,9 @@ des performances équivalentes.
 #gcc est le compilateur de référence pour le langage C depuis les années 1990.
 Il est très complet et supporte un grand nombre d'architectures dont seulement
 une petite partie est indiquée dans le tableau.
+
+#ghs est un compilateur commercial utilisé dans beaucoup de systèmes critiques, 
+principalement automobile et aéronautique.
 
 #icx est le compilateur d'#intel spécifique à aux processeurs et FPGA de la
 marque. Depuis 2021, il utilise le _backend_ #llvm. Enfin, #msvc est le
@@ -505,7 +509,7 @@ _bytecode_ à la volée en y ajoutant de l'instrumentation.
 #undo est un débugueur récent compatible avec les commandes de #gdb et proposant
 une interface graphique plus moderne que #ddd. Il propose aussi une interface
 de navigation dans les historiques d'exécution en séquentiel ou parallèle en
-plus d'un débugueur mémoire. En revance, il n'est disponible que sous Linux
+plus d'un débugueur mémoire. En revanche, il n'est disponible que sous Linux
 et les architectures supportées ne sont pas clairement indiquées. Il est
 probable que l'outil fonctionne par compilation à la volée du _bytecode_ et
 qu'il soit donc compatible avec toutes les architectures supportées par #gcc.
@@ -706,7 +710,7 @@ mais cela reste une pratique peu lisible.
 Une technique bien connue est celle des X macros qui permet de générer du code
 à partir de la définition déclarative d'une relation. Par exemple, on peut
 mettre en relation un identifiant de couleur, un entier qui le représente et
-une chaîne de caractères qui la décrit:
+une chaîne de caractères qui la décrit :
 
 ```c
 #define COULEURS \
