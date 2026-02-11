@@ -33,6 +33,7 @@
   "Gappa"
 )
 #let gcc = link("https://gcc.gnu.org", "GCC")
+#let ghs = link("https://ghs.com/products/compiler.html", "GreenHills MULTI")
 #let gliwa = link("https://www.gliwa.com/", "Gliwa")
 #let gmp = link("https://gmplib.org", "GMP")
 
@@ -64,7 +65,7 @@
   link("https://www.mathworks.com/products/polyspace.html", "Polyspace")
 }
 #let pvs = link("https://pvs.csl.sri.com", "PVS")
-#let rapidtime = {
+#let rapitime = {
   link("https://www.rapitasystems.com/products/rapitime", "RapiTime")
 }
 #let redefinedc = link("https://gitlab.mpi-sws.org/iris/refinedc", "RefinedC")

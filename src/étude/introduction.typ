@@ -23,7 +23,7 @@
 
 Le document présente les langages C, C++, #Ada, #Scade, #OCaml et #Rust
 d'un point de vue de la sûreté logicielle embarquée selon un plan organisé en
-trois axes:
+trois axes :
 1. une description du langage décrivant
   + son paradigme;
   + ses mécanismes de protection;

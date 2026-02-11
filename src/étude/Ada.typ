@@ -152,7 +152,7 @@
   ],
 
   wcet: [
-    Les outils #rapidtime et #aiT cités dans la partie C supportent
+    Les outils #rapitime et #aiT cités dans la partie C supportent
     explicitement #Ada.
   ],
 

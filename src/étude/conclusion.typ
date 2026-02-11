@@ -16,7 +16,7 @@ Comme un bon bricoleur choisi bien son outil en fonction de la tâche à réalis
 un bon développeur doit choisir le langage le plus adapté à son besoin.
 
 Le besoin en sureté est celui de la confiance dans le logiciel. Celle-ci repose
-sur deux piliers:
+sur deux piliers :
 - les vérifications statiques, que ce soit par le compilateur lui-même ou des
   outils tiers;
 - les tests.

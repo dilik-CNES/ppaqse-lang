@@ -58,10 +58,16 @@ autour de l'analyse statique.
 Dans le cadre de cette étude, nous désignons par Polyspace la solution
 _Polyspace Code Prover_.
 
-=== TIS Analyser
+=== TIS Analyzer
 
-_TrustInSoft Analyser_ est un outil d'analyse statique développé par la société
-_TrustInSoft_#footnote[#link("https://trust-in-soft.com")]. C'est un _fork_
-de Frama-C qui utilise un ancien plugin _value_ basé sur le calcul
-d'intervalles. _TrustInSoft_ a amélioré le plugin, la traçabilité des erreurs
-et l'expérience utilisateur.
+_TrustInSoft Analyzer_ est un outil d'analyse hybride statique/dynamique 
+développé par la société _TrustInSoft_#footnote[#link("https://trust-in-soft.com")].
+Bien qu'originellement basé sur Frama-C, il a fortement divergé depuis plus de
+10 ans, et présente, entre autres:
+- une qualification de sureté de fonctionnement où l'aspect _correct_/"soundness" est qualifié, ainsi que les évidences de couverture de code jusqu'au MC/DC
+- un mode de fonctionnement permettant de confirmer les sorties spécifiques lors de fournitures d'entrées discrètes, sans aucun faux positif sur le chemin vérifié
+- un mode d'analyse de valeur généralisé, permettant d'atteindre une évaluation exhaustive du comportement de l'application
+- un support étendu des architectures diverses de CPU du marché, ainsi qu'une modélisation mémoire autour de l'application analysée
+- des rapports CSV/JSON, mais aussi HTML dynamiques et PDF pour une intégration CI/CD
+- une interface web/graphique Root Cause Investigator permettant d'observer 
+l'ensemble des valeurs considérées par l'Analyzer, sur chacun des chemins d'exécution.

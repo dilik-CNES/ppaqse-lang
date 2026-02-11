@@ -37,14 +37,16 @@
 
 #show raw.where(block: true): code => {
   show raw.line: it => {
-    let size = calc.ceil(calc.log(it.count))
-    let total = measure([#size])
-    let num = measure([#it.number])
-    let space = total.width - num.width + 0.5em
-    h(space)
-    text(fill: gray)[#it.number]
-    h(0.5em)
-    it.body
+    context{
+      let size = calc.ceil(calc.log(it.count))
+      let total = measure([#size])
+      let num = measure([#it.number])
+      let space = total.width - num.width + 0.5em
+      h(space)
+      text(fill: gray)[#it.number]
+      h(0.5em)
+      it.body
+    }
   }
   code
 }

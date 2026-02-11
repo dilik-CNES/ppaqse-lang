@@ -202,7 +202,7 @@
 
     Enfin, les Cram tests de Python sont également disponibles dans `OCaml`
     via l'outil `dune` qui peut interpréter directement un fichier au format
-    Cram pour effectuer les tests:
+    Cram pour effectuer les tests :
 
     ```cram
     Ceci est un test
@@ -368,7 +368,7 @@
     en fiabilité et d'adresser des normes très exigentes comme les Critères
     Communs aux niveaux d'assurance les plus élevés (EAL6+).
 
-    Pour des niveaux d'assurances élevés en sûreté, il manque quelques analyses:
+    Pour des niveaux d'assurances élevés en sûreté, il manque quelques analyses :
     - le WCET statique, quitte à restreindre le langage;
     - l'échappement des exceptions;
     - les allocations bornées pour majorer le temps utilisé par le
@@ -386,7 +386,7 @@
 
   interfacage: [
     #ocaml a plusieurs moyens de s'interfacer avec le C (et donc avec tous les
-    langages compatibles avec le C):
+    langages compatibles avec le C) :
     - la FFI pour le _link_ statique;
     - `Ctypes` pour le _link_ dynamique.
 
